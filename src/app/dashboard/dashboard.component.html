@@ -1,0 +1,54 @@
+<div class="main-container">
+  <header class="header-6">
+    <div class="branding">
+        <a class="nav-link">
+            <clr-icon shape="vm-bug"></clr-icon>
+            <span class="title">SVE Accounting</span>
+        </a>
+    </div>
+    <div class="header-actions">
+      <clr-dropdown>
+          <button class="nav-icon" clrDropdownTrigger>
+              <clr-icon shape="cog"></clr-icon>
+              <clr-icon shape="caret down"></clr-icon>
+          </button>
+          <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
+              <a href="..." clrDropdownItem>About</a>
+              <a href="..." clrDropdownItem>Preferences</a>
+              <a href="..." clrDropdownItem>Log out</a>
+          </clr-dropdown-menu>
+      </clr-dropdown>
+  </div>
+</header>
+  <div class="content-container">
+      <div class="content-area">
+          <router-outlet></router-outlet>
+      </div>
+      <nav class="sidenav">
+          <section class="sidenav-content">
+              <a href="..." class="nav-link">
+                  Home
+              </a>
+              <section class="nav-group collapsible">
+                  <input id="billing" type="checkbox">
+                  <label for="billing">Billing</label>
+                  <ul class="nav-list">
+                      <li><a class="nav-link">New Bill</a></li>
+                      <li><a class="nav-link">History</a></li>
+                  </ul>
+              </section>
+              <section class="nav-group collapsible">
+                  <input id="products" type="checkbox">
+                  <label for="products">Products</label>
+                  <ul class="nav-list">
+                      <li><a class="nav-link" [routerLink]="['/dashboard/product-add']">Add</a></li>
+                      <li><a class="nav-link">Update</a></li>
+                      <li><a class="nav-link">Delete</a></li>
+                      <li><a class="nav-link" [routerLink]="['/dashboard/product-view']">View</a></li>
+                  </ul>
+              </section>
+              
+          </section>
+      </nav>
+  </div>
+</div>
