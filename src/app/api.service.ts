@@ -19,4 +19,8 @@ export class ApiService {
     return this.http.post(this.apiURL + 'products', product);
   }
 
+  getProductById(id) {
+    return this.http.get(this.apiURL + 'products/' + id);
+  }
+
 }

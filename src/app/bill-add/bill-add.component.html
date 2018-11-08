@@ -1,0 +1,71 @@
+<div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="card-header">
+                New Bill
+            </div>
+            <div class="card-block">
+                <form clrForm [formGroup]="newBillForm">
+                    <div class="form-group">
+                        <label>Customer Name</label>
+                        <input clrInput type="text" formControlName="customerName" placeholder="Customer Name" />
+                    </div>
+                    <div class="form-group">
+                        <label>Customer Phone</label>
+                        <input clrInput type="text" formControlName="phoneNumber" placeholder="Phone Number" />
+                    </div>
+                    <div class="form-group">
+                        <label>Date</label>
+                        <input clrDate type="text" [(clrDate)]="date" />
+                    </div>
+
+                </form>
+
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-sm btn-link" (click)="addProduct()">Generate Invoice</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="card-header">
+                Add Items
+            </div>
+            <div class="card-block">
+
+                <form>
+                    <div class="form-group">
+                        <label>Search Product</label>
+                        <input clrInput type="text" [(ngModel)]="searchText" name="searchText" placeholder="Product Name" (change)="selectChange()"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Select Product</label>
+                        <div class="clr-select-wrapper">
+                            <select clrSelect name="selectedProduct" class="clr-select" [(ngModel)]="selectedId" (change)="selectChange()">
+                                <option *ngFor="let item of allProducts | search: searchText" value="{{item._id}}">{{item.productName}}</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Product Price</label>
+                        <input clrInput type="text" placeholder="Product Price" value="{{selectedProduct.price}}" name="price"
+                            disabled />
+                    </div>
+                    <div class="form-group">
+                        <label>Available Quantity</label>
+                        <input clrInput type="text" placeholder="Product Quantity" value="{{selectedProduct.quantity}}"
+                            name="qty" disabled />
+                    </div>
+                </form>
+
+
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-sm btn-link" (click)="addProduct()">Add Item</button>
+            </div>
+        </div>
+    </div>
+</div>

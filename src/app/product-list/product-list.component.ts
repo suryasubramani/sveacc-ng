@@ -9,6 +9,7 @@ import { ApiService } from '../api.service';
 export class ProductListComponent implements OnInit {
 
   allProducts: Object;
+  searchText: string;
 
   constructor(private api: ApiService) { }
 

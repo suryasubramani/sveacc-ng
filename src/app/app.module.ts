@@ -11,6 +11,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductAddComponent } from './product-add/product-add.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductListComponent } from './product-list/product-list.component';
+import { BillAddComponent } from './bill-add/bill-add.component';
+import { SortPipe } from './sort.pipe';
+import { SearchPipe } from './search.pipe';
+import { OrderByPipe } from './order-by.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,11 @@ import { ProductListComponent } from './product-list/product-list.component';
     LoginComponent,
     DashboardComponent,
     ProductAddComponent,
-    ProductListComponent
+    ProductListComponent,
+    BillAddComponent,
+    SortPipe,
+    SearchPipe,
+    OrderByPipe
   ],
   imports: [
     FormsModule,

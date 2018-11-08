@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProductAddComponent } from './product-add/product-add.component';
 import { ProductListComponent } from './product-list/product-list.component';
+import { BillAddComponent } from './bill-add/bill-add.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -22,6 +23,10 @@ const routes: Routes = [
       {
         path: 'product-view',
         component: ProductListComponent
+      },
+      {
+        path: 'bill-new',
+        component: BillAddComponent
       }
     ]
   }

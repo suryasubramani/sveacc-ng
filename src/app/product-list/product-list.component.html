@@ -1,3 +1,5 @@
+<input type="text" id="basic" placeholder="Search Product" [(ngModel)]="searchText" class="clr-input">
+
 <table class="table">
   <thead>
       <tr>
@@ -8,7 +10,7 @@
       </tr>
   </thead>
   <tbody>
-      <tr *ngFor="let item of allProducts">
+      <tr *ngFor="let item of (allProducts | orderBy: 'productName' | search: searchText)">
           <td class="left">{{ item.productName }}</td>
           <td class="left">{{ item.productBrand }}</td>
           <td>{{ item.quantity }}</td>
